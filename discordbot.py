@@ -18,9 +18,9 @@ async def on_raw_reaction_add(payload):
 
 @bot.command()
 async def helpcommand(ctx):
-    await ctx.send('/serverinfo <-サーバーの詳細')
-    await ctx.send('/test <-debug')
-    await ctx.send('/helpcommand <-commandlist')
+    ctx.send('/mkch')
+    ctx.send('/test <-debug')
+    ctx.send('/helpcommand <-commandlist')
     
 @bot.command()
 async def test(ctx):
