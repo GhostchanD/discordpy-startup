@@ -15,7 +15,10 @@ async def on_command_error(ctx, error):
 
 @bot.command()
 async def test(ctx):
-    await ctx.send('test world')
+    await ctx.send('test world 1')
+    await ctx.send('test world 2')
+    await ctx.send('test world 3')
+    await ctx.send('test world 4')
 
 
 bot.run(token)
