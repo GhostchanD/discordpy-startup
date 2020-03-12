@@ -12,14 +12,12 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
-@client.event
-async def on_message(message):
-    # メンバーのリストを取得して表示
-    if message.content == '/members':
-        print(message.guild.members)
-    # 役職のリストを取得して表示
-    if message.content == '/roles':
-        print(message.guild.roles)
+@bot.command
+async def serverinfo(ctx):
+    await ctx.send('サーバー全体の役職')
+    print(message.guild.members)
+    await ctx.send('あなたの役職')
+    print(message.guild.roles)
 
 @bot.command()
 async def test(ctx):
