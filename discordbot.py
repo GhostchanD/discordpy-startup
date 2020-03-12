@@ -15,6 +15,7 @@ async def on_command_error(ctx, error):
 @client.event
 async def on_raw_reaction_add(payload):
     await ctx.send('debug reaction')
+    
 @bot.command()
 async def helpcommand(ctx):
     await ctx.send('/serverinfo <-サーバーの詳細')
