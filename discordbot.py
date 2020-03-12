@@ -15,7 +15,7 @@ async def on_command_error(ctx, error):
 @bot.command()
 async def serverinfo(ctx):
     await ctx.send('サーバー全体の役職')
-    print(message.guild.members)
+    await ctx.send('%message.guild.members%')
     await ctx.send('あなたの役職')
     print(message.guild.roles)
     
