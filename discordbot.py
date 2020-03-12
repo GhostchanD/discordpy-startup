@@ -23,18 +23,19 @@ async def helpcommand(ctx):
     await ctx.send('/helpcommand <-commandlist')
     
 @bot.command()
-async def chancre(ctx):
-    category_id = message.channel.category_id
-    category = message.guild.get_channel(category_id)
-    new_channel = await category.create_text_channel(name='new')
-    reply = f'{new_channel.mention} を作成しました'
-    await message.channel.send(reply)
-    
-@bot.command()
 async def test(ctx):
     await ctx.send('test world 1')
     await ctx.send('test world 2')
     await ctx.send('test world 3')
     await ctx.send('test world 4')
+    
+@client.event
+async def on_message(message):
+    if message.content.startswith('/mkch'):
+        category_id = message.channel.category_id
+        category = message.guild.get_channel(category_id)
+        new_channel = await category.create_text_channel(name='new')
+        reply = f'{new_channel.mention} を作成しました'
+        await message.channel.send(reply)
 
 bot.run(token)
